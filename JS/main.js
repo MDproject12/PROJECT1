@@ -23,14 +23,60 @@ function startCounters() {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  const slides = document.querySelectorAll(".swiper-slide");
+  const pagination = document.querySelector(".swiper-pagination");
+  let currentIndex = 0;
+
+ 
+  function createPagination() {
+    slides.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.className = "swiper-pagination-bullet";
+      if (index === 0) dot.classList.add("swiper-pagination-bullet-active");
+      dot.addEventListener("click", () => goToSlide(index));
+      pagination.appendChild(dot);
+    });
+  }
+
+  function updatePagination() {
+    const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+    bullets.forEach((bullet, index) => {
+      bullet.classList.toggle("swiper-pagination-bullet-active", index === currentIndex);
+    });
+  }
+
+
+  function goToSlide(index) {
+    currentIndex = index;
+    const offset = -currentIndex * 100; // Move slides by percentage
+    swiperWrapper.style.transform = `translateX(${offset}%)`;
+    updatePagination();
+  }
+
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    goToSlide(currentIndex);
+  }
+
+
+  function startAutoplay() {
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  }
+
+ 
+  createPagination();
+  goToSlide(currentIndex);
+  startAutoplay();
+});
 
 
 (function () {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
+ 
   function toggleScrolled() {
     const selectBody = document.querySelector("body");
     const selectHeader = document.querySelector("#header");
