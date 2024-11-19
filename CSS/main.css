@@ -403,7 +403,7 @@
     .navmenu .active:focus {
       color: var(--nav-hover-color);
     }
-  
+  }
   /* Mobile Navigation */
   @media (max-width: 1199px) {
     .mobile-nav-toggle {
