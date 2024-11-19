@@ -1,3 +1,30 @@
+function startCounters() {
+  const count = document.querySelectorAll(".count");
+  const time = 1000; // ا
+
+  count.forEach(count => {
+    const num = +count.getAttribute("data-target");
+    const add = num / (time / 10); 
+    let current = 0;
+
+    const updateCounter = () => {
+      current += add;
+      if (current >= num) {
+        count.textContent = num;
+      } else {
+        count.textContent = Math.floor(current);
+        setTimeout(updateCounter, 10);
+      }
+    };
+
+    updateCounter();
+  });
+} window.onload = startCounters;
+
+
+
+
+
 (function () {
   "use strict";
 
