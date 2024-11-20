@@ -1,3 +1,29 @@
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const toggle = item.querySelector('.faq-toggle'); 
+  const content = item.querySelector('.faq-content'); 
+
+
+  item.addEventListener('click', () => {
+
+    item.classList.toggle('faq-active');
+
+
+    if (item.classList.contains('faq-active')) {
+      content.style.display = 'block';
+      toggle.classList.replace('bi-chevron-right', 'bi-chevron-down');
+    } else {
+      content.style.display = 'none';
+      toggle.classList.replace('bi-chevron-down', 'bi-chevron-right');
+    }
+  });
+});
+
+
+
+
+
 function startCounters() {
   const count = document.querySelectorAll(".count");
   const time = 1000; // ا
