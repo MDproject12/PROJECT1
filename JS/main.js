@@ -47,15 +47,14 @@ function startCounters() {
   });
 } window.onload = startCounters;
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   const slides = document.querySelectorAll(".swiper-slide");
   const pagination = document.querySelector(".swiper-pagination");
   let currentIndex = 0;
+  const slideCount = slides.length;
 
- 
+  // إنشاء النقاط (Pagination)
   function createPagination() {
     slides.forEach((_, index) => {
       const dot = document.createElement("div");
@@ -66,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // تحديث النقاط
   function updatePagination() {
     const bullets = document.querySelectorAll(".swiper-pagination-bullet");
     bullets.forEach((bullet, index) => {
@@ -73,30 +73,97 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
-  function goToSlide(index) {
-    currentIndex = index;
-    const offset = -currentIndex * 100; // Move slides by percentage
-    swiperWrapper.style.transform = `translateX(${offset}%)`;
-    updatePagination();
+  // تحديث حالة الشرائح
+  function updateSlidesVisibility() {
+    slides.forEach((slide, index) => {
+      if (index === currentIndex) {
+        slide.style.opacity = "1";
+        slide.style.visibility = "visible";
+      } else {
+        slide.style.opacity = "0";
+        slide.style.visibility = "hidden";
+      }
+    });
   }
 
+  // الذهاب إلى شريحة معينة
+  function goToSlide(index) {
+    currentIndex = index;
+    const offset = -currentIndex * 100; // تحريك الشريحة بالنسبة المئوية
+    swiperWrapper.style.transform = `translateX(${offset}%)`;
+    updatePagination();
+    updateSlidesVisibility();
+  }
 
+  // الانتقال للشريحة التالية
   function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
+    currentIndex = (currentIndex + 1) % slideCount;
     goToSlide(currentIndex);
   }
 
-
+  // بدء التمرير التلقائي
   function startAutoplay() {
-    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    setInterval(nextSlide, 5000); // تغيير الشريحة كل 5 ثوانٍ
   }
 
- 
+  // تهيئة العرض الأول
   createPagination();
   goToSlide(currentIndex);
+  updateSlidesVisibility();
   startAutoplay();
 });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const swiperWrapper = document.querySelector(".swiper-wrapper");
+//   const slides = document.querySelectorAll(".swiper-slide");
+//   const pagination = document.querySelector(".swiper-pagination");
+//   let currentIndex = 0;
+//   const slideCount = slides.length;
+
+//   // إنشاء النقاط (Pagination)
+//   function createPagination() {
+//     slides.forEach((_, index) => {
+//       const dot = document.createElement("div");
+//       dot.className = "swiper-pagination-bullet";
+//       if (index === 0) dot.classList.add("swiper-pagination-bullet-active");
+//       dot.addEventListener("click", () => goToSlide(index));
+//       pagination.appendChild(dot);
+//     });
+//   }
+
+//   // تحديث النقاط
+//   function updatePagination() {
+//     const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+//     bullets.forEach((bullet, index) => {
+//       bullet.classList.toggle("swiper-pagination-bullet-active", index === currentIndex);
+//     });
+//   }
+
+//   // الذهاب إلى شريحة معينة
+//   function goToSlide(index) {
+//     currentIndex = index;
+//     const offset = -currentIndex * 100; // تحريك الشريحة بالنسبة المئوية
+//     swiperWrapper.style.transform = `translateX(${offset}%)`;
+//     updatePagination();
+//   }
+
+//   // الانتقال للشريحة التالية
+//   function nextSlide() {
+//     currentIndex = (currentIndex + 1) % slideCount;
+//     goToSlide(currentIndex);
+//   }
+
+//   // بدء التمرير التلقائي
+//   function startAutoplay() {
+//     setInterval(nextSlide, 5000); // تغيير الشريحة كل 5 ثوانٍ
+//   }
+
+//   // تهيئة العرض الأول
+//   createPagination();
+//   goToSlide(currentIndex);
+//   startAutoplay();
+// });
 
 
 (function () {

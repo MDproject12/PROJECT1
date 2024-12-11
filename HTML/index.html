@@ -8,8 +8,8 @@
     <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="images/favicon.png" rel="icon" />
-    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="../../images/favicon.png" rel="icon" />
+    <link href="../../images/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -18,26 +18,21 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="library/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="..\library/bootstrap-icons/bootstrap-icons.css" />
 
     <link
-      href="assets/vendor/fontawesome-free/css/all.min.css"
+      href="../css/all.min.css"
       rel="stylesheet"
     />
     <!-- bootstrap-->
 
-    <link href="library\bootstrap\bootstrap.min.css" rel="stylesheet" />
-    <link href="library\bootstrap\bootstrapmap.css" rel="stylesheet" />
+    <link href="..\library\bootstrap\bootstrap.min.css" rel="stylesheet" />
+    <link href="..\library\bootstrap\bootstrapmap.css" rel="stylesheet" />
 
     <!-- Main CSS File -->
-    <link href="css\main.css" rel="stylesheet" />
-    <link href="css\all.min.css" rel="stylesheet" />
+    <link href="..\CSS\main.css" rel="stylesheet" />
+    <link href="..\CSS\all.min.css" rel="stylesheet" />
 
-    <!-- swiper -->
-    <link href="library\swiper\swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- aos -->
-    <link href="library\aos\aos.css" rel="stylesheet" />
   </head>
 
   <body class="index-page">
@@ -70,7 +65,7 @@
         >
           <a href="index.html" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="images/logo.png" alt=""> -->
+            <!-- <img src="../../images/logo.png" alt=""> -->
             <h1 class="sitename">Medical reservations</h1>
           </a>
 
@@ -595,7 +590,7 @@
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img
-                  src="images/departments-1.jpg"
+                  src="../images/departments-1.jpg"
                   alt=""
                   class="img-fluid"
                 />
@@ -615,7 +610,7 @@
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img
-                  src="images/departments-2.jpg"
+                  src="../images/departments-2.jpg"
                   alt=""
                   class="img-fluid"
                 />
@@ -635,7 +630,7 @@
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img
-                  src="images/departments-3.jpg"
+                  src="../images/departments-3.jpg"
                   alt=""
                   class="img-fluid"
                 />
@@ -655,7 +650,7 @@
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img
-                  src="images/departments-4.jpg"
+                  src="../images/departments-4.jpg"
                   alt=""
                   class="img-fluid"
                 />
@@ -675,7 +670,7 @@
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img
-                  src="images/departments-5.jpg"
+                  src="../images/departments-5.jpg"
                   alt=""
                   class="img-fluid"
                 />
@@ -708,7 +703,7 @@
               <div class="team-member d-flex align-items-start">
                 <div class="pic">
                   <img
-                    src="images/doctors/doctors-1.jpg"
+                    src="../images/doctors/doctors-1.jpg"
                     class="img-fluid"
                     alt=""
                   />
@@ -734,7 +729,7 @@
               <div class="team-member d-flex align-items-start">
                 <div class="pic">
                   <img
-                    src="images/doctors/doctors-2.jpg"
+                    src="../images/doctors/doctors-2.jpg"
                     class="img-fluid"
                     alt=""
                   />
@@ -761,7 +756,7 @@
               <div class="team-member d-flex align-items-start">
                 <div class="pic">
                   <img
-                    src="images/doctors/doctors-3.jpg"
+                    src="../images/doctors/doctors-3.jpg"
                     class="img-fluid"
                     alt=""
                   />
@@ -787,7 +782,7 @@
               <div class="team-member d-flex align-items-start">
                 <div class="pic">
                   <img
-                    src="images/doctors/doctors-4.jpg"
+                    src="../images/doctors/doctors-4.jpg"
                     class="img-fluid"
                     alt=""
                   />
@@ -915,6 +910,49 @@
   </div>
 </section>
 <!-- /Faq Section -->
+ <style>
+  .swiper-slide {
+  opacity: 0;
+   visibility: hidden; 
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+ .swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+} 
+
+  .swiper-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.swiper-slide {
+  flex: 0 0 100%; /* عرض كل شريحة يكون 100% */
+  box-sizing: border-box;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
+ </style>
       <!-- Testimonials Section -->
       <section id="testimonials" class="testimonials section">
         <div class="container">
@@ -949,7 +987,7 @@
                     <div class="testimonial-item">
                       <div class="d-flex">
                         <img
-                          src="images/testimonials/ibn-sina.jpg"
+                          src="../images/testimonials/ibn-sina.jpg"
                           class="testimonial-img flex-shrink-0"
                           alt=""
                         />
@@ -983,7 +1021,7 @@
                     <div class="testimonial-item">
                       <div class="d-flex">
                         <img
-                          src="images/testimonials/al-razi.jpg"
+                          src="../images/testimonials/al-razi.jpg"
                           class="testimonial-img flex-shrink-0"
                           alt=""
                         />
@@ -1016,7 +1054,7 @@
                     <div class="testimonial-item">
                       <div class="d-flex">
                         <img
-                          src="images/testimonials/ibn-al-nafis.jpg"
+                          src="../images/testimonials/ibn-al-nafis.jpg"
                           class="testimonial-img flex-shrink-0"
                           alt=""
                         />
@@ -1051,7 +1089,7 @@
                     <div class="testimonial-item">
                       <div class="d-flex">
                         <img
-                          src="images/testimonials/al-zahrawi.jpg"
+                          src="../images/testimonials/al-zahrawi.jpg"
                           class="testimonial-img flex-shrink-0"
                           alt=""
                         />
@@ -1104,12 +1142,12 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="images/gallery/gallery-1.jpg"
+                  href="../images/gallery/gallery-1.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-1.jpg"
+                    src="..\images\gellery\gallery-1.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1121,12 +1159,12 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="images/gallery/gallery-2.jpg"
+                  href="..\images\gellery\gallery-2.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-2.jpg"
+                    src="..\images\gellery\gallery-2.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1138,12 +1176,12 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="images/gallery/gallery-3.jpg"
+                  href="../images/gallery/gallery-3.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-3.jpg"
+                    src="..\images\gellery\gallery-3.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1155,12 +1193,12 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="images/gallery/gallery-4.jpg"
+                  href="../images/gallery/gallery-4.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-4.jpg"
+                    src="..\images\gellery\gallery-4.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1172,12 +1210,12 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="images/gallery/gallery-5.jpg"
+                  href="../images/gallery/gallery-5.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-5.jpg"
+                    src="..\images\gellery\gallery-5.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1191,10 +1229,10 @@
                 <a
                   href="images/gallery/gallery-6.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-6.jpg"
+                    src="..\images\gellery\gallery-6.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1208,10 +1246,10 @@
                 <a
                   href="images/gallery/gallery-7.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-7.jpg"
+                    src="..\images\gellery\gallery-7.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1225,10 +1263,10 @@
                 <a
                   href="images/gallery/gallery-8.jpg"
                   class="glightbox"
-                  data-gallery="images-gallery"
+                  data-gallery="../images-gallery"
                 >
                   <img
-                    src="images/gallery/gallery-8.jpg"
+                    src="..\images\gellery\gallery-8.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -1468,28 +1506,18 @@
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+    <!-- Preloader
+    <div id="preloader"></div> -->
 
-    <!-- aos -->
-    <script src="library\aos\aos.cjs.js"></script>
-    <script src="library/aos/aos.esm.js"></script>
-    <script src="library/aos/aos.js"></script>
-    <script src="library/aos/aos.js.map"></script>
-
-    <!-- swiper -->
-    <script src="library/swiper/swiper-bundle.min.js"></script>
-    <script src="library/swiper/swiper-bundle.min.js.map"></script>
+   
 
     <!-- Main JS File -->
-    <script src="main.js"></script>
+    <script src="..\JS\main.js"></script>
 
     <!-- bootstrap-->
-    <script src="library\bootstrap\all.min.js"></script>
-    <script src="library\bootstrap\bootstrap.bundle.min.js"></script>
-    <script src="library\bootstrap\bootstrap.bundle.min.js.map"></script>
-    <!-- purecounter -->
-    <script src="library\purecounter\purecounter_vanilla.js"></script>
-    <script src="library\purecounter\purecounter_vanilla.js.map"></script>
+    <script src="..\library\bootstrap\all.min.js"></script>
+    <script src="..\library\bootstrap\bootstrap.bundle.min.js"></script>
+    <script src="..\library\bootstrap\bootstrap.bundle.min.js.map"></script>
+   
   </body>
 </html>
